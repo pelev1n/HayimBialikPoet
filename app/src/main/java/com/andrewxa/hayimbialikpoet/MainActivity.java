@@ -1,11 +1,15 @@
 package com.andrewxa.hayimbialikpoet;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +30,40 @@ public class MainActivity extends AppCompatActivity {
         shira.setTypeface(myFont);
         proza.setTypeface(myFont);
         articles.setTypeface(myFont);
+
+        CardView shiraCard = (CardView) findViewById(R.id.shira_card);
+        CardView prozaCard = (CardView) findViewById(R.id.proza_card);
+        CardView articlesCard = (CardView) findViewById(R.id.articles_card);
+        CardView biographyCard = (CardView) findViewById(R.id.biography_card);
+
+        shiraCard.setOnClickListener(this);
+        prozaCard.setOnClickListener(this);
+        articlesCard.setOnClickListener(this);
+        biographyCard.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.shira_card:
+                Intent shiraIntent = new Intent(MainActivity.this,ShiraActivity.class);
+                startActivity(shiraIntent);
+                break;
+            case R.id.proza_card:
+                Intent prozaIntent = new Intent(MainActivity.this,ProzaActivity.class);
+                startActivity(prozaIntent);
+                break;
+
+            case R.id.articles_card:
+                Intent articlesIntent = new Intent(MainActivity.this,ArticlesActivity.class);
+                startActivity(articlesIntent);
+                break;
+
+            case R.id.biography_card:
+                Intent biographyIntent = new Intent(MainActivity.this,BiographyActivity.class);
+                startActivity(biographyIntent);
+                break;
+        }
     }
 }
