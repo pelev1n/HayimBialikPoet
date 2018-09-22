@@ -25,15 +25,20 @@
                 android:src="@drawable/bialikold100" />
 
             <TextView
+                android:id="@+id/name"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="חיים נחמן ביאליק"/>
+                android:layout_marginTop="5dp"
+                android:text="חיים נחמן ביאליק"
+                android:textSize="15dp"/>
             <TextView
+                android:id="@+id/years"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1873-1934"/>
+                android:text="1873-1934"
+                android:textSize="15dp"/>
 
 
 
