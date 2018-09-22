@@ -13,43 +13,213 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#eeeeee"
-            android:paddingTop="40dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bialikold100" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#eeeeee"
+                android:orientation="vertical"
+                android:paddingTop="40dp">
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="חיים נחמן ביאליק"
-                android:textSize="15dp"/>
-            <TextView
-                android:id="@+id/years"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1873-1934"
-                android:textSize="15dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/bialikold100" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="חיים נחמן ביאליק"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/years"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="1873-1934"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
 
+            </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical">
 
 
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/proza_card"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginTop="35dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
 
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ic_proza" />
+
+                            <TextView
+                                android:id="@+id/proza_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="פרוזה"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/shira_card"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@+id/proza_card"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ic_shira" />
+
+                            <TextView
+                                android:id="@+id/shira_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="שירה"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/biography_card"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_below="@+id/proza_card"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="15dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ic_biography" />
+
+                            <TextView
+                                android:id="@+id/biography_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ביוגרפיה"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/maamarim_card"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_below="@+id/shira_card"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/biography_card"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ic_article" />
+
+                            <TextView
+                                android:id="@+id/articles_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="מאמרים"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>
