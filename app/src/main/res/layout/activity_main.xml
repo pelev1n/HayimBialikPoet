@@ -36,7 +36,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     android:text="חיים נחמן ביאליק"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="1873-1934"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"/>
 
 
