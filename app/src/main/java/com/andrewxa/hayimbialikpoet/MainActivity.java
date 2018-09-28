@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         realm = Realm.getDefaultInstance();
-
+        dropDB();
         initDB();
-        showShira();
+        showPoems();
 
         TextView name = (TextView) findViewById(R.id.name);
         TextView years = (TextView) findViewById(R.id.years);
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initDB() {
         RealmImporter.importFromJson(getResources(),getJsonPath("shirashirim.json"));
-        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot.json"));
-        RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm.json"));
+        //RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot.json"));
+        //RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm.json"));
         RealmImporter.importFromJson(getResources(),getJsonPath("shirayatmot.json"));
     }
 
@@ -91,12 +91,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         realm.close();
     }
 
+    public void dropDB() {
+        realm.beginTransaction();
+        realm.deleteAll();
+        realm.commitTransaction();
+    }
     public int getJsonPath(String jsonName) {
         int rawResourceId = this.getResources().getIdentifier(jsonName, "raw", this.getPackageName());
         return rawResourceId;
     }
 
-    public void showShira() {
+    public void showPoems() {
         int poemTxt = realm.where(Poem.class).findAll().size();
         if (poemTxt > 0) {
             System.out.println("!!!!!!!!!!!!!! POEM TEXT SIZE : " + poemTxt);

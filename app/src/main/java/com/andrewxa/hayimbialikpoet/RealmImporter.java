@@ -19,7 +19,7 @@ public class RealmImporter {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                InputStream inputStream = resources.openRawResource(R.raw.shirashirim);
+                InputStream inputStream = resources.openRawResource(rawResourceId);
                 try {
                     realm.createAllFromJson(Poetry.class, inputStream);
                 } catch (Exception e) {
