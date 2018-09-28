@@ -2,14 +2,21 @@ package com.andrewxa.hayimbialikpoet.model;
 
 import java.util.List;
 
-public class Poetry {
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 
+@RealmClass
+public class Poetry extends RealmObject {
+
+    @PrimaryKey
     private Integer id;
     private String type;
     private String date;
     private String title;
     private String titleAggl;
-    private List<Poem> poem = null;
+    private RealmList<Poem> poem = null;
 
     public Integer getId() {
         return id;
@@ -55,7 +62,7 @@ public class Poetry {
         return poem;
     }
 
-    public void setPoem(List<Poem> poem) {
+    public void setPoem(RealmList<Poem> poem) {
         this.poem = poem;
     }
 

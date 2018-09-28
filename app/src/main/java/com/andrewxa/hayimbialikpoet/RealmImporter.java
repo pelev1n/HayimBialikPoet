@@ -3,6 +3,8 @@ package com.andrewxa.hayimbialikpoet;
 import android.content.res.Resources;
 import android.util.Log;
 
+import com.andrewxa.hayimbialikpoet.model.Poetry;
+
 import java.io.InputStream;
 
 import io.realm.Realm;
@@ -10,15 +12,16 @@ import io.realm.Realm;
 
 public class RealmImporter {
 
-    static void importFromJson(final Resources resources) {
+    static void importFromJson(final Resources resources, final int rawResourceId) {
         Realm realm = Realm.getDefaultInstance();
+
 
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                InputStream inputStream = resources.openRawResource(R.raw.shirajson);
+                InputStream inputStream = resources.openRawResource(R.raw.shirashirim);
                 try {
-                    realm.createObjectFromJson(Shira.class, inputStream);
+                    realm.createAllFromJson(Poetry.class, inputStream);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

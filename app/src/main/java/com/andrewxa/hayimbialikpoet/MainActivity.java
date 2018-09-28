@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.andrewxa.hayimbialikpoet.model.Poem;
 import com.andrewxa.hayimbialikpoet.shira.PoetryActivity;
 
 import io.realm.Realm;
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         realm = Realm.getDefaultInstance();
-        RealmImporter.importFromJson(getResources());
 
+        initDB();
         showShira();
 
         TextView name = (TextView) findViewById(R.id.name);
@@ -51,6 +52,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         articlesCard.setOnClickListener(this);
         biographyCard.setOnClickListener(this);
 
+    }
+
+    private void initDB() {
+        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirim.json"));
+        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot.json"));
+        RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm.json"));
+        RealmImporter.importFromJson(getResources(),getJsonPath("shirayatmot.json"));
     }
 
     @Override
@@ -83,8 +91,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         realm.close();
     }
 
+    public int getJsonPath(String jsonName) {
+        int rawResourceId = this.getResources().getIdentifier(jsonName, "raw", this.getPackageName());
+        return rawResourceId;
+    }
+
     public void showShira() {
-        int poemTxt = realm.where(PoemText.class).findAll().size();
+        int poemTxt = realm.where(Poem.class).findAll().size();
         if (poemTxt > 0) {
             System.out.println("!!!!!!!!!!!!!! POEM TEXT SIZE : " + poemTxt);
         } else  {
