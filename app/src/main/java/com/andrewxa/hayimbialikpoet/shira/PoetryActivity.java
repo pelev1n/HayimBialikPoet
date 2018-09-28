@@ -1,11 +1,13 @@
-package com.andrewxa.hayimbialikpoet;
+package com.andrewxa.hayimbialikpoet.shira;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class ShiraActivity extends AppCompatActivity{
+import com.andrewxa.hayimbialikpoet.R;
+
+public class PoetryActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

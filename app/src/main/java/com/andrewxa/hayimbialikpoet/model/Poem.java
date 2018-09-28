@@ -1,57 +1,24 @@
 package com.andrewxa.hayimbialikpoet.model;
 
-import io.realm.RealmList;
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
+import java.util.List;
 
-public class Poem extends RealmObject {
+public class Poem {
 
-    @PrimaryKey
-    private Integer id;
-    private String date;
-    private String title;
-    private String titleAggl;
-    private RealmList<PoemText> poemText = null;
+    private Integer paragraph;
+    private List<String> text = null;
 
-    public Integer getId() {
-        return id;
+    public Integer getParagraph() {
+        return paragraph;
+    }
+    public void setParagraph(Integer paragraph) {
+        this.paragraph = paragraph;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public List<String> getText() {
+        return text;
     }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitleAggl() {
-        return titleAggl;
-    }
-
-    public void setTitleAggl(String titleAggl) {
-        this.titleAggl = titleAggl;
-    }
-
-    public RealmList<PoemText> getPoemText() {
-        return poemText;
-    }
-
-    public void setPoemText(RealmList<PoemText> poemText) {
-        this.poemText = poemText;
+    public void setText(List<String> text) {
+        this.text = text;
     }
 
 }

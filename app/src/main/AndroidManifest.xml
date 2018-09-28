@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShiraActivity" />
+        <activity android:name=".shira.PoetryActivity" />
         <activity android:name=".ProzaActivity" />
         <activity android:name=".ArticlesActivity" />
         <activity android:name=".BiographyActivity" />

@@ -3,7 +3,7 @@
 	"type": "shirot",
 	"date": "",
 	"title": "יונה החיט",
-	"title_aggl": "יוֹנָה הַחַיָּט",
+	"titleAggl": "יוֹנָה הַחַיָּט",
 	"poem": [{
 		"paragraph": 1,
 		"text": [
@@ -185,7 +185,7 @@
 	"type": "",
 	"date": "",
 	"title": "",
-	"title_aggl": "",
+	"titleAggl": "",
 	"poem": [{
 		"paragraph": 1,
 		"text": [

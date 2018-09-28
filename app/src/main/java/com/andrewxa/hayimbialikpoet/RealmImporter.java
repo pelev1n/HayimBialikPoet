@@ -3,8 +3,6 @@ package com.andrewxa.hayimbialikpoet;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.andrewxa.hayimbialikpoet.model.Shira;
-
 import java.io.InputStream;
 
 import io.realm.Realm;

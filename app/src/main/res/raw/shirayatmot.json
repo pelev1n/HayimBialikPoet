@@ -3,7 +3,7 @@
     "type": "yatmot",
   	"date": "",
   	"title": "אבי",
-  	"title_aggl": "אָבִי",
+  	"titleAggl": "אָבִי",
   	"poem": [
   	  {
   		"paragraph": 1,
@@ -94,7 +94,7 @@
     "type": "",
     "date": "",
     "title": "",
-    "title_aggl":"",
+    "titleAggl":"",
     "poem":[
       {
         "paragraph": 1,

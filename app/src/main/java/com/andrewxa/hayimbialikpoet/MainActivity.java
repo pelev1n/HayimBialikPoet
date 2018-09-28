@@ -6,12 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.andrewxa.hayimbialikpoet.model.Poem;
-import com.andrewxa.hayimbialikpoet.model.PoemText;
-import com.andrewxa.hayimbialikpoet.model.Shira;
+import com.andrewxa.hayimbialikpoet.shira.PoetryActivity;
 
 import io.realm.Realm;
 
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.shira_card:
-                Intent shiraIntent = new Intent(MainActivity.this, ShiraActivity.class);
+                Intent shiraIntent = new Intent(MainActivity.this, PoetryActivity.class);
                 startActivity(shiraIntent);
                 break;
             case R.id.proza_card:
