@@ -6,7 +6,6 @@ import io.realm.annotations.PrimaryKey;
 
 public class Shira  extends RealmObject {
 
-    @PrimaryKey
     private String type;
     private RealmList<Poem> poems = null;
 

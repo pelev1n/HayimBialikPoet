@@ -2,9 +2,12 @@ package com.andrewxa.hayimbialikpoet.model;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
 public class Poem extends RealmObject {
 
+    @PrimaryKey
     private Integer id;
     private String date;
     private String title;

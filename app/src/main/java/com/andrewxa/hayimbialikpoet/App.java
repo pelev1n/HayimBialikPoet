@@ -7,7 +7,7 @@ import io.realm.RealmConfiguration;
 
 public class App extends Application {
 
-    private static final String testDbFileName = "testdb.realm";
+    private static final String testDbFileName = "test1db.realm";
 
     @Override
     public void onCreate() {
