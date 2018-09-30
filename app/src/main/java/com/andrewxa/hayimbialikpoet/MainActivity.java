@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initDB() {
-        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirim.json"));
-        //RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot.json"));
-        //RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm.json"));
-        RealmImporter.importFromJson(getResources(),getJsonPath("shirayatmot.json"));
+        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirim"));
+        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot"));
+       RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm"));
+      RealmImporter.importFromJson(getResources(),getJsonPath("shirayatmot"));
     }
 
     @Override

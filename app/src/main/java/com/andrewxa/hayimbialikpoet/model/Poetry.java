@@ -10,7 +10,6 @@ import io.realm.annotations.RealmClass;
 @RealmClass
 public class Poetry extends RealmObject {
 
-    @PrimaryKey
     private Integer id;
     private String type;
     private String date;
