@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.model.Poem;
-import com.andrewxa.hayimbialikpoet.shira.PoetryActivity;
 
 import io.realm.Realm;
 
@@ -55,17 +54,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initDB() {
-        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirim"));
-        RealmImporter.importFromJson(getResources(),getJsonPath("shirashirot"));
-       RealmImporter.importFromJson(getResources(),getJsonPath("shiramzmpzm"));
-      RealmImporter.importFromJson(getResources(),getJsonPath("shirayatmot"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shirashirim"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shirashirot"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shiramzmpzm"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shirayatmot"));
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.shira_card:
-                Intent shiraIntent = new Intent(MainActivity.this, PoetryActivity.class);
+                Intent shiraIntent = new Intent(MainActivity.this, com.andrewxa.hayimbialikpoet.poetry.PoetryActivity.class);
                 startActivity(shiraIntent);
                 break;
             case R.id.proza_card:
@@ -96,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         realm.deleteAll();
         realm.commitTransaction();
     }
+
     public int getJsonPath(String jsonName) {
         int rawResourceId = this.getResources().getIdentifier(jsonName, "raw", this.getPackageName());
         return rawResourceId;
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int poemTxt = realm.where(Poem.class).findAll().size();
         if (poemTxt > 0) {
             System.out.println("!!!!!!!!!!!!!! POEM TEXT SIZE : " + poemTxt);
-        } else  {
+        } else {
             System.out.println("!!!!!!!!!! NOTHING :( !!!!!!!!!!!!!!!" + poemTxt);
         }
     }

@@ -51,7 +51,7 @@
                     android:layout_gravity="center_horizontal|center_vertical">
 
                     <android.support.v7.widget.RecyclerView
-                        android:id="@+id/shira_list"
+                        android:id="@+id/poetry_list"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
