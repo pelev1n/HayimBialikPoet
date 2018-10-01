@@ -18,13 +18,10 @@ import io.realm.Realm;
 
 public class PoetryActivity extends AppCompatActivity {
 
-    Realm realm;
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poetry);
-        realm = Realm.getDefaultInstance();
 
         TextView shiraInside = (TextView) findViewById(R.id.shira_text_inside);
 
