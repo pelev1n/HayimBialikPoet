@@ -65,21 +65,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.shira_card:
                 Intent shiraIntent = new Intent(MainActivity.this, com.andrewxa.hayimbialikpoet.poetry.PoetryActivity.class);
-                startActivity(shiraIntent);
+                shiraIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(shiraIntent, 0);
+                overridePendingTransition(0,0);
                 break;
             case R.id.proza_card:
                 Intent prozaIntent = new Intent(MainActivity.this, ProzaActivity.class);
-                startActivity(prozaIntent);
+                prozaIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(prozaIntent, 0);
+                overridePendingTransition(0,0);
                 break;
 
             case R.id.articles_card:
                 Intent articlesIntent = new Intent(MainActivity.this, ArticlesActivity.class);
-                startActivity(articlesIntent);
+                articlesIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(articlesIntent, 0);
+                overridePendingTransition(0,0);
                 break;
 
             case R.id.biography_card:
                 Intent biographyIntent = new Intent(MainActivity.this, BiographyActivity.class);
-                startActivity(biographyIntent);
+                startActivityForResult(biographyIntent, 0);
+                overridePendingTransition(0,0);
                 break;
         }
     }

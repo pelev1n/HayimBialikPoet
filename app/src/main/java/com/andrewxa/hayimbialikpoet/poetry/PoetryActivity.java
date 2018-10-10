@@ -32,6 +32,13 @@ public class PoetryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         PoetryAdapter poetryAdapter = new PoetryAdapter(getAllPoetryTypes());
         recyclerView.setAdapter(poetryAdapter);
+
+        poetryAdapter.setPoetryOnItemClickListener(new PoetryOnItemClickListener() {
+            @Override
+            public void onCardViewClick(int position, TextView poetryTypeText) {
+
+            }
+        });
     }
 
     public List<String> getAllPoetryTypes() {
