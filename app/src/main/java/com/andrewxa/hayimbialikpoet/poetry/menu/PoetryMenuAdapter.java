@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetry;
+package com.andrewxa.hayimbialikpoet.poetry.menu;
 
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -10,17 +10,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.poetry.menu.PoetryOnItemClickListener;
 
 import java.util.List;
 
-public class PoetryAdapter extends RecyclerView.Adapter<PoetryAdapter.ViewHolder> {
+public class PoetryMenuAdapter extends RecyclerView.Adapter<PoetryMenuAdapter.ViewHolder> {
 
     private List<String> poetryType;
     private PoetryOnItemClickListener poetryOnItemClickListener;
     Typeface myFont;
 
-    public PoetryAdapter(List<String> poetryType) {
+    public PoetryMenuAdapter(List<String> poetryType) {
         this.poetryType = poetryType;
     }
 

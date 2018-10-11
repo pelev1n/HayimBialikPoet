@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetry.fragments;
+package com.andrewxa.hayimbialikpoet.poetry.types;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 
 import com.andrewxa.hayimbialikpoet.R;
 
-public class PoetryFragment extends Fragment {
+public class PoetryTypeFragment extends Fragment {
 
-    public static PoetryFragment newInstance(String poetryType) {
+    public static PoetryTypeFragment newInstance(String poetryType) {
         Bundle args = new Bundle();
         args.putString("POETRY_TYPE", poetryType);
 
-        PoetryFragment fragment = new PoetryFragment();
+        PoetryTypeFragment fragment = new PoetryTypeFragment();
         fragment.setArguments(args);
         return fragment;
     }
