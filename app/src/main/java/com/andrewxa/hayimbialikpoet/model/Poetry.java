@@ -1,5 +1,6 @@
 package com.andrewxa.hayimbialikpoet.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import io.realm.RealmList;
@@ -8,7 +9,7 @@ import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 @RealmClass
-public class Poetry extends RealmObject {
+public class Poetry extends RealmObject implements Serializable {
 
     private Integer id;
     private String type;
@@ -57,7 +58,7 @@ public class Poetry extends RealmObject {
         this.titleAggl = titleAggl;
     }
 
-    public List<Poem> getPoem() {
+    public RealmList<Poem> getPoem() {
         return poem;
     }
 

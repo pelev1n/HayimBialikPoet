@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.model.Poem;
+import com.andrewxa.hayimbialikpoet.poetrytypes.PoetryTypesActivity;
 
 import io.realm.Realm;
 
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.shira_card:
-                Intent shiraIntent = new Intent(MainActivity.this, com.andrewxa.hayimbialikpoet.poetry.PoetryActivity.class);
+                Intent shiraIntent = new Intent(MainActivity.this, PoetryTypesActivity.class);
                 shiraIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(shiraIntent, 0);
                 overridePendingTransition(0,0);

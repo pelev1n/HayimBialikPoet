@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetry.menu;
+package com.andrewxa.hayimbialikpoet.poetrytypes;
 
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -13,13 +13,13 @@ import com.andrewxa.hayimbialikpoet.R;
 
 import java.util.List;
 
-public class PoetryMenuAdapter extends RecyclerView.Adapter<PoetryMenuAdapter.ViewHolder> {
+public class PoetryTypesAdapter extends RecyclerView.Adapter<PoetryTypesAdapter.ViewHolder> {
 
     private List<String> poetryType;
     private PoetryOnItemClickListener poetryOnItemClickListener;
     Typeface myFont;
 
-    public PoetryMenuAdapter(List<String> poetryType) {
+    public PoetryTypesAdapter(List<String> poetryType) {
         this.poetryType = poetryType;
     }
 
@@ -28,7 +28,7 @@ public class PoetryMenuAdapter extends RecyclerView.Adapter<PoetryMenuAdapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         myFont = Typeface.createFromAsset(parent.getContext().getAssets(), "fonts/shmulikclm.ttf");
-        View view = inflater.inflate(R.layout.poetry_item, parent, false);
+        View view = inflater.inflate(R.layout.poetry_recyclerview_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -49,7 +49,7 @@ public class PoetryMenuAdapter extends RecyclerView.Adapter<PoetryMenuAdapter.Vi
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            poetryTypeText = itemView.findViewById(R.id.poetry_item);
+            poetryTypeText = itemView.findViewById(R.id.final_poetry_item);
             poetryContainer = itemView.findViewById(R.id.cardViewPoetry);
             poetryContainer.setOnClickListener(this::onClick);
 

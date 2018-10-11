@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetry.types;
+package com.andrewxa.hayimbialikpoet.poetrytypes.list;
 
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -11,19 +11,18 @@ import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.R;
 import com.andrewxa.hayimbialikpoet.model.Poetry;
-import com.andrewxa.hayimbialikpoet.poetry.menu.PoetryMenuAdapter;
-import com.andrewxa.hayimbialikpoet.poetry.menu.PoetryOnItemClickListener;
+import com.andrewxa.hayimbialikpoet.poetrytypes.PoetryOnItemClickListener;
 
 import java.util.List;
 
-public class PoetryAdapter extends RecyclerView.Adapter<PoetryAdapter.ViewHolder>{
+public class PoetryListAdapter extends RecyclerView.Adapter<PoetryListAdapter.ViewHolder>{
 
 
     private List<Poetry> poetries;
     private PoetryOnItemClickListener poetryOnItemClickListener;
     Typeface myFont;
 
-    public PoetryAdapter(List<Poetry> poetries) {
+    public PoetryListAdapter(List<Poetry> poetries) {
         this.poetries = poetries;
     }
 
@@ -32,7 +31,7 @@ public class PoetryAdapter extends RecyclerView.Adapter<PoetryAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         myFont = Typeface.createFromAsset(parent.getContext().getAssets(), "fonts/shmulikclm.ttf");
-        View view = inflater.inflate(R.layout.poetry_item, parent, false);
+        View view = inflater.inflate(R.layout.poetry_recyclerview_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -54,16 +53,22 @@ public class PoetryAdapter extends RecyclerView.Adapter<PoetryAdapter.ViewHolder
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            poetryTitle = itemView.findViewById(R.id.poetry_item);
+            poetryTitle = itemView.findViewById(R.id.final_poetry_item);
             poetryContainer = itemView.findViewById(R.id.cardViewPoetry);
             poetryContainer.setOnClickListener(this::onClick);
 
         }
 
         @Override
-        public void onClick(View view) {
-
+        public void onClick(View v) {
+            if (v instanceof CardView) {
+                poetryOnItemClickListener.onCardViewClick(getAdapterPosition());
+            }
         }
+    }
+
+    public void setPoetryOnItemClickListener(PoetryOnItemClickListener poetryOnItemClickListener) {
+        this.poetryOnItemClickListener = poetryOnItemClickListener;
     }
 
 }

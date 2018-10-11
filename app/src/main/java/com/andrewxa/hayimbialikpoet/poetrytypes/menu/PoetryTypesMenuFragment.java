@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetry.menu;
+package com.andrewxa.hayimbialikpoet.poetrytypes.menu;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,17 +12,17 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.poetry.types.PoetryFragment;
+import com.andrewxa.hayimbialikpoet.poetrytypes.list.PoetryListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PoetryMenuFragment extends Fragment{
+public class PoetryTypesMenuFragment extends Fragment{
 
     List<String> poetryType;
 
-    public static PoetryMenuFragment newInstance() {
-        return new PoetryMenuFragment();
+    public static PoetryTypesMenuFragment newInstance() {
+        return new PoetryTypesMenuFragment();
     }
 
     @Nullable
@@ -34,12 +34,12 @@ public class PoetryMenuFragment extends Fragment{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        System.out.println("INSIDE POETRY MENU FRAGMENT!!!!!!!!!!");
+        System.out.println("INSIDE POETRY TYPE MENU FRAGMENT!!!!!!!!!!");
 
 
         RecyclerView recyclerView =  view.findViewById(R.id.poetry_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        PoetryMenuAdapter poetryMenuAdapter = new PoetryMenuAdapter(getAllPoetryTypes());
+        PoetryTypesMenuAdapter poetryMenuAdapter = new PoetryTypesMenuAdapter(getAllPoetryTypes());
         recyclerView.setAdapter(poetryMenuAdapter);
 
         poetryMenuAdapter.setPoetryOnItemClickListener( position -> {
@@ -48,7 +48,7 @@ public class PoetryMenuFragment extends Fragment{
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.poetry_fragment_container,
-                            PoetryFragment.newInstance(pType))
+                            PoetryListFragment.newInstance(pType))
                     .commit();
         });
 
