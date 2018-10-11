@@ -56,6 +56,8 @@ public class PoetryActivity extends AppCompatActivity {
         poetryType.add("יתמות");
         poetryType.add("מזמורים ופזמונות");
         poetryType.add("שירות");
+        poetryType.add("שירים ופזמונות לילדים");
+        poetryType.add("שירים מן העזבון");
 
         return poetryType;
     }
