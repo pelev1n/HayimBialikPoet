@@ -4,5 +4,5 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public interface PoetryOnItemClickListener {
-    void onCardViewClick(int position, TextView poetryTypeText);
+    void onCardViewClick(int position);
 }

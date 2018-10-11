@@ -7,9 +7,11 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
 import com.andrewxa.hayimbialikpoet.model.Poetry;
+import com.andrewxa.hayimbialikpoet.poetry.fragments.PoetryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.List;
 import io.realm.Realm;
 
 public class PoetryActivity extends AppCompatActivity {
+
+    List <String> poetryType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +37,21 @@ public class PoetryActivity extends AppCompatActivity {
         PoetryAdapter poetryAdapter = new PoetryAdapter(getAllPoetryTypes());
         recyclerView.setAdapter(poetryAdapter);
 
-        poetryAdapter.setPoetryOnItemClickListener(new PoetryOnItemClickListener() {
-            @Override
-            public void onCardViewClick(int position, TextView poetryTypeText) {
+        poetryAdapter.setPoetryOnItemClickListener( position -> {
+            Toast.makeText(this, "usenet", Toast.LENGTH_SHORT).show();
+            String pType = poetryType.get(position);
+            this.getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.poetry_fragment_container,
+                            PoetryFragment.newInstance(pType))
+                    .commit();
 
-            }
+
         });
     }
 
     public List<String> getAllPoetryTypes() {
-        List <String> poetryType = new ArrayList<>(3);
+        poetryType = new ArrayList<>(3);
         poetryType.add("שירים");
         poetryType.add("יתמות");
         poetryType.add("מזמורים ופזמונות");

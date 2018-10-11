@@ -52,15 +52,14 @@ public class PoetryAdapter extends RecyclerView.Adapter<PoetryAdapter.ViewHolder
             super(itemView);
             poetryTypeText = itemView.findViewById(R.id.poetry_item);
             poetryContainer = itemView.findViewById(R.id.cardViewPoetry);
-
-
+            poetryContainer.setOnClickListener(this::onClick);
 
         }
 
         @Override
         public void onClick(View v) {
             if (v instanceof CardView) {
-                poetryOnItemClickListener.onCardViewClick(getAdapterPosition(),poetryTypeText);
+                poetryOnItemClickListener.onCardViewClick(getAdapterPosition());
             }
         }
     }
