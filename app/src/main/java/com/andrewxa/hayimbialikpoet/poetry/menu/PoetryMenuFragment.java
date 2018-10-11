@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.poetry.types.PoetryTypeFragment;
+import com.andrewxa.hayimbialikpoet.poetry.types.PoetryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class PoetryMenuFragment extends Fragment{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        System.out.println("CREATED NEW POETRY FRAGMENT!!!!!!!!!!");
+        System.out.println("INSIDE POETRY MENU FRAGMENT!!!!!!!!!!");
 
 
         RecyclerView recyclerView =  view.findViewById(R.id.poetry_list);
@@ -48,7 +48,7 @@ public class PoetryMenuFragment extends Fragment{
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.poetry_fragment_container,
-                            PoetryTypeFragment.newInstance(pType))
+                            PoetryFragment.newInstance(pType))
                     .commit();
         });
 
