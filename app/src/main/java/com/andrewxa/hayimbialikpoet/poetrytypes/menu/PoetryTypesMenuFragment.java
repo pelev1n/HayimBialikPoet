@@ -49,6 +49,7 @@ public class PoetryTypesMenuFragment extends Fragment{
                     .beginTransaction()
                     .replace(R.id.poetry_fragment_container,
                             PoetryListFragment.newInstance(pType))
+                    .addToBackStack(null)
                     .commit();
         });
 

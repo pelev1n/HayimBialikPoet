@@ -64,6 +64,7 @@ public class PoetryListFragment extends Fragment {
                     .beginTransaction()
                     .replace(R.id.poetry_fragment_container,
                             PoetryFragment.newInstance(poetry))
+                    .addToBackStack(null)
                     .commit();
         });
     }

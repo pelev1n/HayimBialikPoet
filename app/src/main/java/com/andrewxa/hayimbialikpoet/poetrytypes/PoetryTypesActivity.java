@@ -23,6 +23,7 @@ public class PoetryTypesActivity extends AppCompatActivity {
         this.getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.poetry_fragment_container, PoetryTypesMenuFragment.newInstance())
+                .addToBackStack(null)
                 .commit();
     }
 

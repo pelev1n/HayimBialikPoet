@@ -12,16 +12,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
         <TextView
             android:id="@+id/final_poetry_item"
             android:layout_centerVertical="true"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginRight="35dp"
             android:text="אל הציפור"
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:layout_alignParentRight="true"
+            android:textDirection="rtl"/>
 
 
     </RelativeLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:layout_marginTop="5dp"
                     android:text="חיים נחמן ביאליק"
                     android:textSize="19sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/years"
@@ -46,28 +46,28 @@
                     android:layout_gravity="center_horizontal"
                     android:text="1873-1934"
                     android:textSize="19sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
 
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/proza_card"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="68dp"
-                        android:layout_marginTop="45dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="22dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp">
 
@@ -103,9 +103,9 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="16dp"
-                        android:layout_marginTop="45dp"
+                        android:layout_marginTop="40dp"
                         android:layout_toRightOf="@+id/proza_card"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp">
@@ -143,8 +143,7 @@
                         android:layout_height="120dp"
                         android:layout_below="@+id/proza_card"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="68dp"
-                        android:layout_marginRight="0dp"
+                        android:layout_marginLeft="22dp"
                         android:layout_marginTop="15dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp">
@@ -180,16 +179,13 @@
                         android:id="@+id/articles_card"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_below="@+id/shira_card"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="15dp"
                         android:layout_toRightOf="@+id/biography_card"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
@@ -197,8 +193,11 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/maamarimImg"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
                                 android:layout_gravity="center_horizontal"
                                 android:src="@drawable/ic_article" />
 
@@ -206,23 +205,24 @@
                                 android:id="@+id/articles_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_below="@+id/maamarimImg"
                                 android:text="מאמרים"
                                 android:textAlignment="center"
                                 android:textColor="@android:color/black"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
-                        </LinearLayout>
+                        </RelativeLayout>
 
                     </android.support.v7.widget.CardView>
 
                 </RelativeLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </RelativeLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
