@@ -51,175 +51,264 @@
 
             </LinearLayout>
 
-            <RelativeLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true">
 
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/proza_card"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="22dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/yatmot_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="22dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_proza" />
-
-                            <TextView
-                                android:id="@+id/proza_text"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="פרוזה"
-                                android:textAlignment="center"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
 
-                        </LinearLayout>
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_yatmot" />
 
-                    </android.support.v7.widget.CardView>
+                                <TextView
+                                    android:id="@+id/yatmot_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="יתמות"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/shira_card"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_toRightOf="@+id/proza_card"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                            </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
+                        </android.support.v7.widget.CardView>
 
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_shira" />
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/shirim_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_toRightOf="@+id/yatmot_card"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
 
-                            <TextView
-                                android:id="@+id/shira_text"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="שירה"
-                                android:textAlignment="center"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
 
-                        </LinearLayout>
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_shira" />
 
-                    </android.support.v7.widget.CardView>
+                                <TextView
+                                    android:id="@+id/shirim_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="שירים"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/biography_card"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_below="@+id/proza_card"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="22dp"
-                        android:layout_marginTop="15dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                            </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
+                        </android.support.v7.widget.CardView>
 
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_biography" />
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/shirot_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_below="@+id/yatmot_card"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="15dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
 
-                            <TextView
-                                android:id="@+id/biography_text"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ביוגרפיה"
-                                android:textAlignment="center"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
 
-                        </LinearLayout>
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_shirot" />
 
-                    </android.support.v7.widget.CardView>
+                                <TextView
+                                    android:id="@+id/shirot_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="שירות"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/articles_card"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_below="@+id/shira_card"
-                        android:layout_toRightOf="@+id/biography_card"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                            </LinearLayout>
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
+                        </android.support.v7.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/maamarimImg"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerHorizontal="true"
-                                android:layout_gravity="center_horizontal"
-                                android:src="@drawable/ic_article" />
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/mzmpzm_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_below="@+id/shirim_card"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/shirot_card"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
 
-                            <TextView
-                                android:id="@+id/articles_text"
+                            <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/maamarimImg"
-                                android:text="מאמרים"
-                                android:textAlignment="center"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
 
-                        </RelativeLayout>
+                                <ImageView
+                                    android:id="@+id/mzmpzmImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_mzmpzm" />
 
-                    </android.support.v7.widget.CardView>
+                                <TextView
+                                    android:id="@+id/mzmpzm_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/mzmpzmImg"
+                                    android:text="מזמורים ופזמונות"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/eladim_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_below="@+id/shirot_card"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_boyandgirl" />
+
+                                <TextView
+                                    android:id="@+id/eladim_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="שירים לילדים"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/shirimazvon_card"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_below="@+id/mzmpzm_card"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/eladim_card"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="16dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/shirimazvonImg"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_shirimazvon" />
+
+                                <TextView
+                                    android:id="@+id/shirimazvon_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/shirimazvonImg"
+                                    android:text="שירים מן העזבון"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+
+                    </RelativeLayout>
+
 
                 </RelativeLayout>
-
-
-            </RelativeLayout>
+            </ScrollView>
 
         </LinearLayout>
     </RelativeLayout>

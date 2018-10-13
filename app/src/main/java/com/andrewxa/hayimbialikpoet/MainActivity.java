@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         TextView name = (TextView) findViewById(R.id.name);
         TextView years = (TextView) findViewById(R.id.years);
-        TextView biography = (TextView) findViewById(R.id.biography_text);
-        TextView shira = (TextView) findViewById(R.id.shira_text);
-        TextView proza = (TextView) findViewById(R.id.proza_text);
-        TextView articles = (TextView) findViewById(R.id.articles_text);
+        TextView biography = (TextView) findViewById(R.id.shirot_text);
+        TextView shira = (TextView) findViewById(R.id.shirim_text);
+        TextView proza = (TextView) findViewById(R.id.yatmot_text);
+        TextView articles = (TextView) findViewById(R.id.mzmpzm_text);
 
         Typeface myFont = Typeface.createFromAsset(this.getAssets(), "fonts/shmulikclm.ttf");
         name.setTypeface(myFont);
@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         proza.setTypeface(myFont);
         articles.setTypeface(myFont);
 
-        CardView shiraCard = (CardView) findViewById(R.id.shira_card);
-        CardView prozaCard = (CardView) findViewById(R.id.proza_card);
-        CardView articlesCard = (CardView) findViewById(R.id.articles_card);
-        CardView biographyCard = (CardView) findViewById(R.id.biography_card);
+        CardView shiraCard = (CardView) findViewById(R.id.shirim_card);
+        CardView prozaCard = (CardView) findViewById(R.id.yatmot_card);
+        CardView articlesCard = (CardView) findViewById(R.id.mzmpzm_card);
+        CardView biographyCard = (CardView) findViewById(R.id.shirot_card);
 
         shiraCard.setOnClickListener(this);
         prozaCard.setOnClickListener(this);
@@ -64,27 +64,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.shira_card:
+            case R.id.shirim_card:
                 Intent shiraIntent = new Intent(MainActivity.this, PoetryTypesActivity.class);
                 shiraIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(shiraIntent, 0);
                 overridePendingTransition(0,0);
                 break;
-            case R.id.proza_card:
+            case R.id.yatmot_card:
                 Intent prozaIntent = new Intent(MainActivity.this, ProzaActivity.class);
                 prozaIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(prozaIntent, 0);
                 overridePendingTransition(0,0);
                 break;
 
-            case R.id.articles_card:
+            case R.id.mzmpzm_card:
                 Intent articlesIntent = new Intent(MainActivity.this, ArticlesActivity.class);
                 articlesIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(articlesIntent, 0);
                 overridePendingTransition(0,0);
                 break;
 
-            case R.id.biography_card:
+            case R.id.shirot_card:
                 Intent biographyIntent = new Intent(MainActivity.this, BiographyActivity.class);
                 startActivityForResult(biographyIntent, 0);
                 overridePendingTransition(0,0);
