@@ -27,47 +27,36 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_shira" />
+                    android:src="@drawable/ic_shirimazvon" />
 
                 <TextView
-                    android:id="@+id/shira_text_inside"
+                    android:id="@+id/shirimAzvon_text_inside"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
-                    android:text="שירה"
+                    android:text="שירים מן העזבון"
                     android:textSize="19sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical">
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:orientation="vertical">
 
 
-                        <FrameLayout
-                            android:id="@+id/poetry_fragment_container"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                        </FrameLayout>
-                    </LinearLayout>
                 </RelativeLayout>
 
-            </ScrollView>
 
+            </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>

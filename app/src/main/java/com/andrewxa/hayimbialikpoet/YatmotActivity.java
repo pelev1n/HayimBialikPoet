@@ -5,16 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class ProzaActivity extends AppCompatActivity{
+public class YatmotActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proza);
+        setContentView(R.layout.activity_yatmot);
 
-        TextView prozaInside = (TextView) findViewById(R.id.proza_text_inside);
+        TextView yatmotTxtInside = (TextView) findViewById(R.id.yatmot_text_inside);
 
         Typeface myFont = Typeface.createFromAsset(this.getAssets(),"fonts/shmulikclm.ttf");
-        prozaInside.setTypeface(myFont);
+        yatmotTxtInside.setTypeface(myFont);
     }
 }

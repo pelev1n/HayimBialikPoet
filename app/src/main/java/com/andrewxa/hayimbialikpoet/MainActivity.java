@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.model.Poem;
-import com.andrewxa.hayimbialikpoet.poetrytypes.PoetryTypesActivity;
+import com.andrewxa.hayimbialikpoet.poetrytypes.ShirimTypesActivity;
 
 import io.realm.Realm;
 
@@ -27,30 +27,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initDB();
         showPoems();
 
-        TextView name = (TextView) findViewById(R.id.name);
-        TextView years = (TextView) findViewById(R.id.years);
-        TextView biography = (TextView) findViewById(R.id.shirot_text);
-        TextView shira = (TextView) findViewById(R.id.shirim_text);
-        TextView proza = (TextView) findViewById(R.id.yatmot_text);
-        TextView articles = (TextView) findViewById(R.id.mzmpzm_text);
+        initFont();
 
-        Typeface myFont = Typeface.createFromAsset(this.getAssets(), "fonts/shmulikclm.ttf");
-        name.setTypeface(myFont);
-        years.setTypeface(myFont);
-        biography.setTypeface(myFont);
-        shira.setTypeface(myFont);
-        proza.setTypeface(myFont);
-        articles.setTypeface(myFont);
+        CardView shirimCard = (CardView) findViewById(R.id.shirim_card);
+        CardView yatmotCard = (CardView) findViewById(R.id.yatmot_card);
+        CardView mzmpzmCard = (CardView) findViewById(R.id.mzmpzm_card);
+        CardView shirotCard = (CardView) findViewById(R.id.shirot_card);
+        CardView shirimazvonCard = (CardView) findViewById(R.id.shirimazvon_card);
+        CardView eladimCard = (CardView) findViewById(R.id.eladim_card);
 
-        CardView shiraCard = (CardView) findViewById(R.id.shirim_card);
-        CardView prozaCard = (CardView) findViewById(R.id.yatmot_card);
-        CardView articlesCard = (CardView) findViewById(R.id.mzmpzm_card);
-        CardView biographyCard = (CardView) findViewById(R.id.shirot_card);
-
-        shiraCard.setOnClickListener(this);
-        prozaCard.setOnClickListener(this);
-        articlesCard.setOnClickListener(this);
-        biographyCard.setOnClickListener(this);
+        shirimCard.setOnClickListener(this);
+        yatmotCard.setOnClickListener(this);
+        mzmpzmCard.setOnClickListener(this);
+        shirotCard.setOnClickListener(this);
+        shirimazvonCard.setOnClickListener(this);
+        eladimCard.setOnClickListener(this);
 
     }
 
@@ -61,32 +52,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RealmImporter.importFromJson(getResources(), getJsonPath("shirayatmot"));
     }
 
+    private void initFont() {
+        TextView name = (TextView) findViewById(R.id.name);
+        TextView years = (TextView) findViewById(R.id.years);
+        TextView shirim = (TextView) findViewById(R.id.shirim_text);
+        TextView yatmot = (TextView) findViewById(R.id.yatmot_text);
+        TextView mzmpzm = (TextView) findViewById(R.id.mzmpzm_text);
+        TextView shirot = (TextView) findViewById(R.id.shirot_text);
+        TextView shirimazvon = (TextView) findViewById(R.id.shirimazvon_text);
+        TextView eladim = (TextView) findViewById(R.id.eladim_text);
+
+        Typeface myFont = Typeface.createFromAsset(this.getAssets(), "fonts/shmulikclm.ttf");
+        name.setTypeface(myFont);
+        years.setTypeface(myFont);
+        shirim.setTypeface(myFont);
+        yatmot.setTypeface(myFont);
+        mzmpzm.setTypeface(myFont);
+        shirot.setTypeface(myFont);
+        shirimazvon.setTypeface(myFont);
+        eladim.setTypeface(myFont);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.shirim_card:
-                Intent shiraIntent = new Intent(MainActivity.this, PoetryTypesActivity.class);
-                shiraIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(shiraIntent, 0);
+                Intent shirimIntent = new Intent(MainActivity.this, ShirimTypesActivity.class);
+                shirimIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(shirimIntent, 0);
                 overridePendingTransition(0,0);
                 break;
             case R.id.yatmot_card:
-                Intent prozaIntent = new Intent(MainActivity.this, ProzaActivity.class);
-                prozaIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(prozaIntent, 0);
+                Intent yatmotIntent = new Intent(MainActivity.this, YatmotActivity.class);
+                yatmotIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(yatmotIntent, 0);
                 overridePendingTransition(0,0);
                 break;
 
             case R.id.mzmpzm_card:
-                Intent articlesIntent = new Intent(MainActivity.this, ArticlesActivity.class);
-                articlesIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(articlesIntent, 0);
+                Intent mzmpzmIntent = new Intent(MainActivity.this, MzmpzmActivity.class);
+                mzmpzmIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(mzmpzmIntent, 0);
                 overridePendingTransition(0,0);
                 break;
 
             case R.id.shirot_card:
-                Intent biographyIntent = new Intent(MainActivity.this, BiographyActivity.class);
-                startActivityForResult(biographyIntent, 0);
+                Intent shirotIntent = new Intent(MainActivity.this, ShirotActivity.class);
+                shirotIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(shirotIntent, 0);
+                overridePendingTransition(0,0);
+                break;
+
+            case R.id.shirimazvon_card:
+                Intent shirimAzvon = new Intent(MainActivity.this, ShirimAzvonActivity.class);
+                shirimAzvon.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(shirimAzvon, 0);
+                overridePendingTransition(0,0);
+                break;
+
+            case R.id.eladim_card:
+                Intent eladimIntent = new Intent(MainActivity.this, EladimActivity.class);
+                startActivityForResult(eladimIntent, 0);
                 overridePendingTransition(0,0);
                 break;
         }

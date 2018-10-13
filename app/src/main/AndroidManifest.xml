@@ -18,10 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".poetrytypes.PoetryTypesActivity"/>
-        <activity android:name=".ProzaActivity" />
-        <activity android:name=".ArticlesActivity" />
-        <activity android:name=".BiographyActivity" />
+        <activity android:name=".poetrytypes.ShirimTypesActivity"/>
+        <activity android:name=".YatmotActivity" />
+        <activity android:name=".MzmpzmActivity" />
+        <activity android:name=".EladimActivity" />
+        <activity android:name=".ShirimAzvonActivity" />
+        <activity android:name=".ShirotActivity" />
     </application>
 
 </manifest>

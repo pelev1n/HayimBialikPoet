@@ -5,16 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class BiographyActivity extends AppCompatActivity {
+public class EladimActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_biography);
+        setContentView(R.layout.activity_eladim);
 
-        TextView biographyInside = (TextView) findViewById(R.id.biography_text_inside);
+        TextView eladimTxtInside = (TextView) findViewById(R.id.eladim_text_inside);
 
         Typeface myFont = Typeface.createFromAsset(this.getAssets(),"fonts/shmulikclm.ttf");
-        biographyInside.setTypeface(myFont);
+        eladimTxtInside.setTypeface(myFont);
     }
 }

@@ -27,15 +27,15 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_article" />
+                    android:src="@drawable/ic_yatmot" />
 
                 <TextView
-                    android:id="@+id/articles_text_inside"
+                    android:id="@+id/yatmot_text_inside"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
-                    android:text="מאמרים"
+                    android:text="יתמות"
                     android:textSize="19sp"
                     android:textStyle="bold"/>
 

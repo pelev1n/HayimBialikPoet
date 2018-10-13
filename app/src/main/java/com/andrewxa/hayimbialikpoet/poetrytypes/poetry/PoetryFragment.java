@@ -5,26 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.model.Poem;
 import com.andrewxa.hayimbialikpoet.model.Poetry;
-import com.andrewxa.hayimbialikpoet.poetrytypes.list.PoetryListAdapter;
-import com.andrewxa.hayimbialikpoet.poetrytypes.list.PoetryListFragment;
-
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
-import java.util.List;
-
-import io.realm.Realm;
 
 public class PoetryFragment extends Fragment{
 
@@ -52,7 +39,7 @@ public class PoetryFragment extends Fragment{
 
         Typeface myFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/shmulikclm.ttf");
 
-        TextView mainPoetryTitle = getActivity().findViewById(R.id.shira_text_inside);
+        TextView mainPoetryTitle = getActivity().findViewById(R.id.shirim_text_inside);
         mainPoetryTitle.setText(poetry.getTitle());
 
         TextView textView = view.findViewById(R.id.final_poetry_item);

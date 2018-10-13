@@ -8,17 +8,17 @@ import android.widget.TextView;
 import com.andrewxa.hayimbialikpoet.R;
 import com.andrewxa.hayimbialikpoet.poetrytypes.menu.PoetryTypesMenuFragment;
 
-public class PoetryTypesActivity extends AppCompatActivity {
+public class ShirimTypesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poetry);
+        setContentView(R.layout.activity_shirim);
 
-        TextView shiraInside =  findViewById(R.id.shira_text_inside);
+        TextView shirimTxtInside =  findViewById(R.id.shirim_text_inside);
 
         Typeface myFont = Typeface.createFromAsset(this.getAssets(), "fonts/shmulikclm.ttf");
-        shiraInside.setTypeface(myFont);
+        shirimTxtInside.setTypeface(myFont);
 
         this.getSupportFragmentManager()
                 .beginTransaction()
