@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.model.Poem;
-import com.andrewxa.hayimbialikpoet.poetrytypes.ShirimTypesActivity;
+import com.andrewxa.hayimbialikpoet.shirim.ShirimActivity;
+import com.andrewxa.hayimbialikpoet.util.RealmImporter;
 
 import io.realm.Realm;
 
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RealmImporter.importFromJson(getResources(), getJsonPath("shirashirot"));
         RealmImporter.importFromJson(getResources(), getJsonPath("shiramzmpzm"));
         RealmImporter.importFromJson(getResources(), getJsonPath("shirayatmot"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shireladim"));
+        RealmImporter.importFromJson(getResources(), getJsonPath("shirizavon"));
     }
 
     private void initFont() {
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.shirim_card:
-                Intent shirimIntent = new Intent(MainActivity.this, ShirimTypesActivity.class);
+                Intent shirimIntent = new Intent(MainActivity.this, ShirimActivity.class);
                 shirimIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(shirimIntent, 0);
                 overridePendingTransition(0,0);
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.shirimazvon_card:
-                Intent shirimAzvon = new Intent(MainActivity.this, ShirimAzvonActivity.class);
+                Intent shirimAzvon = new Intent(MainActivity.this, ShirimIzavonActivity.class);
                 shirimAzvon.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivityForResult(shirimAzvon, 0);
                 overridePendingTransition(0,0);

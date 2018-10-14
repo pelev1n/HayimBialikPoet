@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet;
+package com.andrewxa.hayimbialikpoet.util;
 
 import android.content.res.Resources;
 import android.util.Log;
@@ -12,7 +12,7 @@ import io.realm.Realm;
 
 public class RealmImporter {
 
-    static void importFromJson(final Resources resources, final int rawResourceId) {
+    public static void importFromJson(final Resources resources, final int rawResourceId) {
         Realm realm = Realm.getDefaultInstance();
 
 

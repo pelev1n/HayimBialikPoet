@@ -18,11 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".poetrytypes.ShirimTypesActivity"/>
+        <activity android:name=".shirim.ShirimActivity"/>
         <activity android:name=".YatmotActivity" />
         <activity android:name=".MzmpzmActivity" />
         <activity android:name=".EladimActivity" />
-        <activity android:name=".ShirimAzvonActivity" />
+        <activity android:name=".ShirimIzavonActivity" />
         <activity android:name=".ShirotActivity" />
     </application>
 

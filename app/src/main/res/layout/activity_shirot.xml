@@ -30,7 +30,7 @@
                     android:src="@drawable/ic_shirot" />
 
                 <TextView
-                    android:id="@+id/shirot_text_inside"
+                    android:id="@+id/poetry_text_inside"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -41,22 +41,32 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_height="match_parent">
 
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:orientation="vertical">
 
 
+                        <FrameLayout
+                            android:id="@+id/poetry_fragment_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </FrameLayout>
+                    </LinearLayout>
                 </RelativeLayout>
 
-
-            </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
     </RelativeLayout>

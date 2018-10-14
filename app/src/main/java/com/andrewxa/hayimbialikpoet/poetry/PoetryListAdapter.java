@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetrytypes.list;
+package com.andrewxa.hayimbialikpoet.poetry;
 
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.R;
 import com.andrewxa.hayimbialikpoet.model.Poetry;
-import com.andrewxa.hayimbialikpoet.poetrytypes.PoetryOnItemClickListener;
 
 import java.util.List;
 

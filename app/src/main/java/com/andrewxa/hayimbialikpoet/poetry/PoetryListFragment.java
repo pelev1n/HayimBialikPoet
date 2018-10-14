@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetrytypes.list;
+package com.andrewxa.hayimbialikpoet.poetry;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
 import com.andrewxa.hayimbialikpoet.model.Poetry;
-import com.andrewxa.hayimbialikpoet.poetrytypes.poetry.PoetryFragment;
+import com.andrewxa.hayimbialikpoet.poetry.fragment.PoetryFragment;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class PoetryListFragment extends Fragment {
         realm = Realm.getDefaultInstance();
         String poetryType = (String) getArguments().getSerializable("POETRY_TYPE");
 
-        TextView mainPoetryTitle = getActivity().findViewById(R.id.shirim_text_inside);
+        TextView mainPoetryTitle = getActivity().findViewById(R.id.poetry_text_inside);
         mainPoetryTitle.setText(poetryType);
 
         RecyclerView recyclerView = view.findViewById(R.id.poetry_list);
@@ -92,7 +92,7 @@ public class PoetryListFragment extends Fragment {
                 break;
 
             case "שירים מן העזבון":
-                jsonPoetryType = "hazvon";
+                jsonPoetryType = "izavon";
                 break;
 
         }

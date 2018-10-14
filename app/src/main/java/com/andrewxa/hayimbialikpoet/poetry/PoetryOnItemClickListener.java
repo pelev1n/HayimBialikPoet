@@ -1,4 +1,4 @@
-package com.andrewxa.hayimbialikpoet.poetrytypes;
+package com.andrewxa.hayimbialikpoet.poetry;
 
 public interface PoetryOnItemClickListener {
     void onCardViewClick(int position);

@@ -30,7 +30,7 @@
                     android:src="@drawable/ic_shira" />
 
                 <TextView
-                    android:id="@+id/shirim_text_inside"
+                    android:id="@+id/poetry_text_inside"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
