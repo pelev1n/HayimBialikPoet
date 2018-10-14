@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.andrewxa.hayimbialikpoet.model.Poem;
 import com.andrewxa.hayimbialikpoet.shirim.ShirimActivity;
 import com.andrewxa.hayimbialikpoet.util.RealmImporter;
+import com.andrewxa.hayimbialikpoet.util.Util;
 
 import io.realm.Realm;
 
@@ -26,54 +27,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         realm = Realm.getDefaultInstance();
         dropDB();
         initDB();
-        showPoems();
 
         initFont();
 
-        CardView shirimCard = (CardView) findViewById(R.id.shirim_card);
-        CardView yatmotCard = (CardView) findViewById(R.id.yatmot_card);
-        CardView mzmpzmCard = (CardView) findViewById(R.id.mzmpzm_card);
-        CardView shirotCard = (CardView) findViewById(R.id.shirot_card);
-        CardView shirimazvonCard = (CardView) findViewById(R.id.shirimazvon_card);
-        CardView eladimCard = (CardView) findViewById(R.id.eladim_card);
-
-        shirimCard.setOnClickListener(this);
-        yatmotCard.setOnClickListener(this);
-        mzmpzmCard.setOnClickListener(this);
-        shirotCard.setOnClickListener(this);
-        shirimazvonCard.setOnClickListener(this);
-        eladimCard.setOnClickListener(this);
+        findViewById(R.id.shirim_card).setOnClickListener(this);
+        findViewById(R.id.yatmot_card).setOnClickListener(this);
+        findViewById(R.id.mzmpzm_card).setOnClickListener(this);
+        findViewById(R.id.shirot_card).setOnClickListener(this);
+        findViewById(R.id.shirimazvon_card).setOnClickListener(this);
+        findViewById(R.id.eladim_card).setOnClickListener(this);
 
     }
 
     private void initDB() {
-        RealmImporter.importFromJson(getResources(), getJsonPath("shirashirim"));
-        RealmImporter.importFromJson(getResources(), getJsonPath("shirashirot"));
-        RealmImporter.importFromJson(getResources(), getJsonPath("shiramzmpzm"));
-        RealmImporter.importFromJson(getResources(), getJsonPath("shirayatmot"));
-        RealmImporter.importFromJson(getResources(), getJsonPath("shireladim"));
-        RealmImporter.importFromJson(getResources(), getJsonPath("shirizavon"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirashirim"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirashirot"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shiramzmpzm"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirayatmot"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shireladim"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirizavon"));
     }
 
     private void initFont() {
-        TextView name = (TextView) findViewById(R.id.name);
-        TextView years = (TextView) findViewById(R.id.years);
-        TextView shirim = (TextView) findViewById(R.id.shirim_text);
-        TextView yatmot = (TextView) findViewById(R.id.yatmot_text);
-        TextView mzmpzm = (TextView) findViewById(R.id.mzmpzm_text);
-        TextView shirot = (TextView) findViewById(R.id.shirot_text);
-        TextView shirimazvon = (TextView) findViewById(R.id.shirimazvon_text);
-        TextView eladim = (TextView) findViewById(R.id.eladim_text);
 
-        Typeface myFont = Typeface.createFromAsset(this.getAssets(), "fonts/shmulikclm.ttf");
-        name.setTypeface(myFont);
-        years.setTypeface(myFont);
-        shirim.setTypeface(myFont);
-        yatmot.setTypeface(myFont);
-        mzmpzm.setTypeface(myFont);
-        shirot.setTypeface(myFont);
-        shirimazvon.setTypeface(myFont);
-        eladim.setTypeface(myFont);
+        Util.setFont(this,findViewById(R.id.name));
+        Util.setFont(this,findViewById(R.id.years));
+        Util.setFont(this,findViewById(R.id.shirim_text));
+        Util.setFont(this,findViewById(R.id.yatmot_text));
+        Util.setFont(this,findViewById(R.id.mzmpzm_text));
+        Util.setFont(this,findViewById(R.id.shirot_text));
+        Util.setFont(this,findViewById(R.id.shirimazvon_text));
+        Util.setFont(this,findViewById(R.id.eladim_text));
     }
 
     @Override
@@ -133,17 +117,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         realm.commitTransaction();
     }
 
-    public int getJsonPath(String jsonName) {
-        int rawResourceId = this.getResources().getIdentifier(jsonName, "raw", this.getPackageName());
-        return rawResourceId;
-    }
-
-    public void showPoems() {
-        int poemTxt = realm.where(Poem.class).findAll().size();
-        if (poemTxt > 0) {
-            System.out.println("!!!!!!!!!!!!!! POEM TEXT SIZE : " + poemTxt);
-        } else {
-            System.out.println("!!!!!!!!!! NOTHING :( !!!!!!!!!!!!!!!" + poemTxt);
-        }
-    }
 }
