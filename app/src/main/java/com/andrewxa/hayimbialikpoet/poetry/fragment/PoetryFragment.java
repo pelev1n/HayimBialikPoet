@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.model.Poetry;
+import com.andrewxa.hayimbialikpoet.model.poetry.Poetry;
 
 public class PoetryFragment extends Fragment{
 

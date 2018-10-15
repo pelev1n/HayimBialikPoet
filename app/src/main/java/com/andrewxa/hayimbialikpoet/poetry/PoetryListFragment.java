@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewxa.hayimbialikpoet.R;
-import com.andrewxa.hayimbialikpoet.model.Poetry;
+import com.andrewxa.hayimbialikpoet.model.poetry.Poetry;
 import com.andrewxa.hayimbialikpoet.poetry.fragment.PoetryFragment;
 
 import java.util.List;

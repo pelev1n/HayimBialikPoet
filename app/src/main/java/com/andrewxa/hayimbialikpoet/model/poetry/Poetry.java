@@ -1,11 +1,9 @@
-package com.andrewxa.hayimbialikpoet.model;
+package com.andrewxa.hayimbialikpoet.model.poetry;
 
 import java.io.Serializable;
-import java.util.List;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 @RealmClass

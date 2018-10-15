@@ -1,23 +1,28 @@
 package com.andrewxa.hayimbialikpoet;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
 
-import com.andrewxa.hayimbialikpoet.model.Poem;
+import com.andrewxa.hayimbialikpoet.model.poetrycard.PoetryCard;
 import com.andrewxa.hayimbialikpoet.shirim.ShirimActivity;
 import com.andrewxa.hayimbialikpoet.util.RealmImporter;
 import com.andrewxa.hayimbialikpoet.util.Util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.realm.Realm;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
     Realm realm;
+    List<PoetryCard> lstPoetryCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,81 +33,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dropDB();
         initDB();
 
-        initFont();
+        lstPoetryCard = new ArrayList<>();
+        lstPoetryCard.add(new PoetryCard("יתמות",R.drawable.ic_yatmot));
+        lstPoetryCard.add(new PoetryCard("שירים",R.drawable.ic_shira));
+        lstPoetryCard.add(new PoetryCard("שירות",R.drawable.ic_shirot));
+        lstPoetryCard.add(new PoetryCard("מזמורים ופזמונות",R.drawable.ic_mzmpzm));
+        lstPoetryCard.add(new PoetryCard("שירים לילדים",R.drawable.ic_boyandgirl));
+        lstPoetryCard.add(new PoetryCard("שירים מן העזבון",R.drawable.ic_shirimazvon));
 
-        findViewById(R.id.shirim_card).setOnClickListener(this);
-        findViewById(R.id.yatmot_card).setOnClickListener(this);
-        findViewById(R.id.mzmpzm_card).setOnClickListener(this);
-        findViewById(R.id.shirot_card).setOnClickListener(this);
-        findViewById(R.id.shirimazvon_card).setOnClickListener(this);
-        findViewById(R.id.eladim_card).setOnClickListener(this);
+        /*RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
+        PoetryCardAdapter myAdapter = new PoetryCardAdapter(lstPoetryCard);
+        myrv.setLayoutManager(new GridLayoutManager(this,2));
+        myrv.setAdapter(myAdapter);*/
+
+
+        RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
+        PoetryCardAdapter myAdapter = new PoetryCardAdapter(lstPoetryCard);
+        myrv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
+        myrv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        myrv.setHasFixedSize(false);
+        myrv.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
+       // myrv.setLayoutManager(new LinearLayoutManager(this));
+        myrv.setAdapter(myAdapter);
 
     }
 
-    private void initDB() {
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirashirim"));
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirashirot"));
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shiramzmpzm"));
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirayatmot"));
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shireladim"));
-        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this,"shirizavon"));
-    }
-
-    private void initFont() {
-
-        Util.setFont(this,findViewById(R.id.name));
-        Util.setFont(this,findViewById(R.id.years));
-        Util.setFont(this,findViewById(R.id.shirim_text));
-        Util.setFont(this,findViewById(R.id.yatmot_text));
-        Util.setFont(this,findViewById(R.id.mzmpzm_text));
-        Util.setFont(this,findViewById(R.id.shirot_text));
-        Util.setFont(this,findViewById(R.id.shirimazvon_text));
-        Util.setFont(this,findViewById(R.id.eladim_text));
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.shirim_card:
-                Intent shirimIntent = new Intent(MainActivity.this, ShirimActivity.class);
-                shirimIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(shirimIntent, 0);
-                overridePendingTransition(0,0);
-                break;
-            case R.id.yatmot_card:
-                Intent yatmotIntent = new Intent(MainActivity.this, YatmotActivity.class);
-                yatmotIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(yatmotIntent, 0);
-                overridePendingTransition(0,0);
-                break;
-
-            case R.id.mzmpzm_card:
-                Intent mzmpzmIntent = new Intent(MainActivity.this, MzmpzmActivity.class);
-                mzmpzmIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(mzmpzmIntent, 0);
-                overridePendingTransition(0,0);
-                break;
-
-            case R.id.shirot_card:
-                Intent shirotIntent = new Intent(MainActivity.this, ShirotActivity.class);
-                shirotIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(shirotIntent, 0);
-                overridePendingTransition(0,0);
-                break;
-
-            case R.id.shirimazvon_card:
-                Intent shirimAzvon = new Intent(MainActivity.this, ShirimIzavonActivity.class);
-                shirimAzvon.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(shirimAzvon, 0);
-                overridePendingTransition(0,0);
-                break;
-
-            case R.id.eladim_card:
-                Intent eladimIntent = new Intent(MainActivity.this, EladimActivity.class);
-                startActivityForResult(eladimIntent, 0);
-                overridePendingTransition(0,0);
-                break;
-        }
+    public void initDB() {
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shirashirim"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shirashirot"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shiramzmpzm"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shirayatmot"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shireladim"));
+        RealmImporter.importFromJson(getResources(), Util.getJsonPath(this, "shirizavon"));
     }
 
     @Override

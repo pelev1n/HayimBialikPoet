@@ -3,7 +3,7 @@ package com.andrewxa.hayimbialikpoet.util;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.andrewxa.hayimbialikpoet.model.Poetry;
+import com.andrewxa.hayimbialikpoet.model.poetry.Poetry;
 
 import java.io.InputStream;
 
