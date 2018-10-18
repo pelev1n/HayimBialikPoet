@@ -22,7 +22,7 @@ import java.util.List;
 
 import io.realm.Realm;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     Realm realm;
     List<PoetryCard> lstPoetryCard;
@@ -53,11 +53,28 @@ public class MainActivity extends AppCompatActivity{
         Util.setFont(this,findViewById(R.id.years));
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
-        PoetryCardAdapter myAdapter = new PoetryCardAdapter(lstPoetryCard);
+        PoetryCardAdapter poetryCardAdapter = new PoetryCardAdapter(lstPoetryCard);
 /*        myrv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
         myrv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));*/
         myrv.setLayoutManager(new GridLayoutManager(this, 2));
-        myrv.setAdapter(myAdapter);
+        myrv.setAdapter(poetryCardAdapter);
+
+        poetryCardAdapter.setpoetryCardClickListener(new PoetryCardClickListener() {
+            @Override
+            public void onPoetryCardViewClick(int position) {
+                lstPoetryCard.add(new PoetryCard("יתמות",R.drawable.ic_yatmot));
+                lstPoetryCard.add(new PoetryCard("שירים",R.drawable.ic_shira));
+                lstPoetryCard.add(new PoetryCard("שירות",R.drawable.ic_shirot));
+                lstPoetryCard.add(new PoetryCard("מזמורים ופזמונות",R.drawable.ic_mzmpzm));
+                lstPoetryCard.add(new PoetryCard("שירים לילדים",R.drawable.ic_boyandgirl));
+                lstPoetryCard.add(new PoetryCard("שירים מן העזבון",R.drawable.ic_shirimazvon));
+
+
+
+            }
+        });
+        };
+
 
     }
 
