@@ -1,6 +1,8 @@
 package com.andrewxa.hayimbialikpoet.model.poetrycard;
 
-public class PoetryCard {
+import java.io.Serializable;
+
+public class PoetryCard implements Serializable {
     private String title;
     private int thumbnail;
 

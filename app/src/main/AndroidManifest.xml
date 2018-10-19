@@ -24,6 +24,7 @@
         <activity android:name=".EladimActivity" />
         <activity android:name=".ShirimIzavonActivity" />
         <activity android:name=".ShirotActivity" />
+        <activity android:name=".PoetryCardActivity" />
     </application>
 
 </manifest>

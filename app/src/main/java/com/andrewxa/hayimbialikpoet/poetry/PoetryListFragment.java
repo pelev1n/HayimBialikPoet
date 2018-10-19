@@ -48,7 +48,7 @@ public class PoetryListFragment extends Fragment {
         realm = Realm.getDefaultInstance();
         String poetryType = (String) getArguments().getSerializable("POETRY_TYPE");
 
-        TextView mainPoetryTitle = getActivity().findViewById(R.id.poetry_text_inside);
+        TextView mainPoetryTitle = getActivity().findViewById(R.id.poetry_fragment_txt);
         mainPoetryTitle.setText(poetryType);
 
         RecyclerView recyclerView = view.findViewById(R.id.poetry_list);

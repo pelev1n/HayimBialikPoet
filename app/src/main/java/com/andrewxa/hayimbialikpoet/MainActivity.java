@@ -52,23 +52,13 @@ public class MainActivity extends AppCompatActivity {
         myrv.setLayoutManager(new GridLayoutManager(this, 2));
         myrv.setAdapter(poetryCardAdapter);
 
-        poetryCardAdapter.setpoetryCardClickListener(new PoetryCardClickListener() {
-            @Override
-            public void onPoetryCardViewClick(int position) {
-                lstPoetryCard.add(new PoetryCard("יתמות",R.drawable.ic_yatmot));
-                lstPoetryCard.add(new PoetryCard("שירים",R.drawable.ic_shira));
-                lstPoetryCard.add(new PoetryCard("שירות",R.drawable.ic_shirot));
-                lstPoetryCard.add(new PoetryCard("מזמורים ופזמונות",R.drawable.ic_mzmpzm));
-                lstPoetryCard.add(new PoetryCard("שירים לילדים",R.drawable.ic_boyandgirl));
-                lstPoetryCard.add(new PoetryCard("שירים מן העזבון",R.drawable.ic_shirimazvon));
-
-
-
-            }
+        poetryCardAdapter.setpoetryCardClickListener(position -> {
+            System.out.println("INSIDE!!!!!!!!!!!!!!");
+            PoetryCard poetryCard = lstPoetryCard.get(position);
+            Intent intent = new Intent(this,PoetryCardActivity.class);
+            intent.putExtra("poetrycard",poetryCard);
+            startActivity(intent);
         });
-        };
-
-
     }
 
     public void initDB() {
