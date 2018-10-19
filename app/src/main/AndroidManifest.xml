@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".shirim.ShirimActivity"/>
-        <activity android:name=".YatmotActivity" />
-        <activity android:name=".MzmpzmActivity" />
-        <activity android:name=".EladimActivity" />
-        <activity android:name=".ShirimIzavonActivity" />
-        <activity android:name=".ShirotActivity" />
         <activity android:name=".PoetryCardActivity" />
     </application>
 
