@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andrewxa.hayimbialikpoet.model.poetrycard.PoetryCard;
-import com.andrewxa.hayimbialikpoet.poetry.PoetryOnItemClickListener;
 
 import java.util.List;
 

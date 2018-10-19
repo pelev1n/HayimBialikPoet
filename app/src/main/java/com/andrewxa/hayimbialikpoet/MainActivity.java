@@ -1,19 +1,12 @@
 package com.andrewxa.hayimbialikpoet;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
-import android.view.View;
 
 import com.andrewxa.hayimbialikpoet.model.poetrycard.PoetryCard;
-import com.andrewxa.hayimbialikpoet.shirim.ShirimActivity;
 import com.andrewxa.hayimbialikpoet.util.RealmImporter;
 import com.andrewxa.hayimbialikpoet.util.Util;
 
@@ -53,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         myrv.setAdapter(poetryCardAdapter);
 
         poetryCardAdapter.setpoetryCardClickListener(position -> {
-            System.out.println("INSIDE!!!!!!!!!!!!!!");
             PoetryCard poetryCard = lstPoetryCard.get(position);
             Intent intent = new Intent(this,PoetryCardActivity.class);
             intent.putExtra("poetrycard",poetryCard);

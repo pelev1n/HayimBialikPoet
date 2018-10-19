@@ -39,7 +39,7 @@ public class PoetryFragment extends Fragment{
 
         Typeface myFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/shmulikclm.ttf");
 
-        TextView mainPoetryTitle = getActivity().findViewById(R.id.poetry_text_inside);
+        TextView mainPoetryTitle = getActivity().findViewById(R.id.poetry_fragment_txt);
         mainPoetryTitle.setText(poetry.getTitle());
 
         TextView textView = view.findViewById(R.id.final_poetry_item);
